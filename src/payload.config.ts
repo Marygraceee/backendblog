@@ -7,7 +7,10 @@ import Users from './collections/Users';
 import Media from './collections/Media';
 
 export default buildConfig({
-  serverURL: 'http://localhost:3000',
+  serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS,
+  rateLimit: {
+    trustProxy: true,
+  },
   admin: {
     user: Users.slug,
   },
